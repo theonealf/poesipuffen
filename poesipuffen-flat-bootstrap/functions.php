@@ -297,6 +297,9 @@ function xsbf_scripts() {
 	// content header, footer, etc.
 	wp_enqueue_style( 'flat-bootstrap', get_stylesheet_uri() );
 
+
+	wp_enqueue_style( 'flat-bootstrap', get_stylesheet_uri() );
+
 	/* LOAD JAVASCRIPT */
 
 	// Bootstrap core javascript
@@ -328,6 +331,11 @@ function xsbf_scripts() {
 		wp_enqueue_script( 'respond', get_template_directory_uri() . '/html5/respond.min.js', null, '1.4.2', true );
 	}
 
+	// lägger till stilmallen som jag hanterar kommer från sass!!!
+	wp_register_style('poesipuffen', get_template_directory_uri() . '/css/poesipuffen.css', array(), null, 'all');
+	wp_enqueue_style( 'poesipuffen');
+	
+ 
 } // end function
 add_action( 'wp_enqueue_scripts', 'xsbf_scripts' );
 endif; // end ! function_exists
