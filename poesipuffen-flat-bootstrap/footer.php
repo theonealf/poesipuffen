@@ -11,9 +11,6 @@
 ?>
 	</div><!-- #content -->
 
-	<?php // Page bottom (before footer) widget area 
-	get_sidebar( 'pagebottom' ); 
-	?>
 
 	<?php // Start the footer area ?>
 	<footer id="colophon" class="site-footer" role="contentinfo">

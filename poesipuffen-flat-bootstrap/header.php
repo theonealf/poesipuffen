@@ -115,13 +115,13 @@
 		);
 				
 		echo apply_filters( 'xsbf_navbar', $navbar );
-		?>
+        ?>
 
 		</div><!-- .container -->
 		</div><!-- .navbar -->
 		</nav><!-- #site-navigation -->
 
 	</header><!-- #masthead -->
-
+    <div><strong>Current template:</strong> <?php get_current_template( true ); ?></div>
 	<?php // Set up the content area (but don't put it in a container) ?>	
 	<div id="content" class="site-content">

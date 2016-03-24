@@ -8,22 +8,37 @@
 
 get_header(); ?>
 
-<?php get_template_part( 'content', 'header' ); ?>
+
 
 	<div id="primary" class="content-area-wide">
 		<main id="main" class="site-main" role="main">
+        detta
 
-			<?php while ( have_posts() ) : the_post(); ?>
+        <?php
+           
+        $type = 'poesipuffar';
+        $args=array(
+          'post_type' => $type,
+          'post_status' => 'publish',
+          'posts_per_page' => -1,
+          'caller_get_posts'=> 1
+          );
 
-				<?php get_template_part( 'content', 'page-fullwidth' ); ?>
-				
-				Hejja
+            $custom_query = new WP_Query($args); 
+              
+            if( $custom_query->have_posts() ) {
+  while ($custom_query->have_posts()) : $custom_query->the_post(); ?>
+    <p><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></p>
+    <?php
+  endwhile;
+}
+            wp_reset_query();  // Restore global post data stomped by the_post().
+    ?>
+        <?php wp_reset_postdata(); // reset the query ?>
 
-			<?php endwhile; // end of the loop. ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
 	<?php //get_sidebar(); ?>
-
 <?php get_footer(); ?>
+            

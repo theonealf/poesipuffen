@@ -187,7 +187,8 @@
 		}
 						
 		// Display the image and text
-		?>
+    ?>
+
 		<header class="content-header-image">
 			<div class="<?php echo $image_class; ?>" style="background-image: url('<?php echo $image_url; ?>')">
 				<div class="<?php echo $overlay_class; ?>">
